@@ -11,20 +11,20 @@
 docker login
 docker pull nginx
 docker run -d -p 9000:80 nginx
-# (screenshot: 1.png)
+![Nginx Run](1.png)
 
 # Step 2: View Nginx in the Browser
 # Open http://localhost:9000
-# (screenshot: 2.png)
+![Nginx Browser](2.png)
 
 # Step 3: Run Nginx on a Different Port
 docker run -d -p 9001:80 nginx
 docker ps
-# (screenshot: 3.png)
+![Docker ps](3.png)
 
 # Step 4: Access the Second Nginx Instance
 # Open http://localhost:9001
-# (screenshot: 4.png)
+![Second Nginx](4.png)
 
 # ---------------------------------------------------
 # 2️⃣ Modifying the Nginx Content
@@ -32,15 +32,15 @@ docker ps
 
 # Step 5: Enter the Container
 docker exec -it <container_id> /bin/sh
-# (screenshot: 5.png)
+![Exec into Container](5.png)
 
 # Step 6: Change the Default Page
 echo "hiiii it is docker here" > /usr/share/nginx/html/index.html
-# (screenshot: 6.png)
+![Change HTML](6.png)
 
 # Step 7: View the Changes
 # Refresh http://localhost:9001
-# (screenshot: 7.png)
+![Modified Page](7.png)
 
 # ---------------------------------------------------
 # 3️⃣ Spring PetClinic Application
@@ -50,15 +50,15 @@ echo "hiiii it is docker here" > /usr/share/nginx/html/index.html
 git clone https://github.com/spring-projects/spring-petclinic.git
 cd spring-petclinic
 docker build -t spring-petclinic .
-# (screenshot: 8 (1).jpg)
+![Clone and Build](8 (1).jpg)
 
 # Step 9: Run the Application Container
 docker run -d -p 8080:8080 spring-petclinic
-# (screenshot: 9 (1).jpg)
+![Run PetClinic](9 (1).jpg)
 
 # Step 10: Access the Application
 # Open http://localhost:8080
-# (screenshot: 10 (1).png)
+![PetClinic Running](10 (1).png)
 
 # ---------------------------------------------------
 # 4️⃣ Pulling Different Docker Images
@@ -81,7 +81,7 @@ docker pull ubuntu
 # Correct name is 'node'.
 docker pull node
 # ✅ Pulled successfully
-# (screenshot: 11.png)
+![Pull](11.png)
 
 # ---------------------------------------------------
 # ✅ Useful Notes
