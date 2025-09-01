@@ -155,6 +155,3 @@ docker pull node
 ![Pull](11.png)
 
 ---
-
-
-تحب أعمل **TOC (جدول محتويات)** صغير فوق يوديك لكل Section
