@@ -1,10 +1,10 @@
-# Docker Nginx and Spring PetClinic Guide 🐳
+# 🐳 Docker Nginx and Spring PetClinic Guide
 
 This guide demonstrates how to use Docker to run and manage an **Nginx web server**, a **Spring PetClinic** application, and how to pull common base images.
 
 ---
 
-## 1. Nginx Web Server
+## 1️⃣ Nginx Web Server
 
 ### Step 1: Login and Run Nginx
 Login to Docker, pull the latest Nginx image, and run a container mapping host port **9000** to container port **80**:
@@ -18,7 +18,7 @@ docker run -d -p 9000:80 nginx
 ---
 
 ### Step 2: View Nginx in the Browser
-Navigate to **http://localhost:9000** in your browser to see the default Nginx welcome page.
+Open your browser and navigate to **http://localhost:9000** to see the default Nginx welcome page.
 
 ![Nginx Browser](2.png)
 
@@ -38,17 +38,16 @@ docker ps
 ---
 
 ### Step 4: Access the Second Nginx Instance
-Go to **http://localhost:9001**.  
-You’ll see the Nginx welcome page again.
+Go to **http://localhost:9001** — you should see the Nginx page again.
 
 ![Second Nginx](4.png)
 
 ---
 
-## 2. Modifying the Nginx Content
+## 2️⃣ Modifying the Nginx Content
 
 ### Step 5: Enter the Container
-Access the container shell:
+Execute a shell inside the running container:
 
 docker exec -it <container_id> /bin/sh  
 
@@ -66,13 +65,13 @@ echo "hiiii it is docker here" > /usr/share/nginx/html/index.html
 ---
 
 ### Step 7: View the Changes
-Refresh `http://localhost:9001` to see the new content.
+Refresh **http://localhost:9001** to see your new content.
 
 ![Modified Page](7.png)
 
 ---
 
-## 3. Spring PetClinic Application
+## 3️⃣ Spring PetClinic Application
 
 ### Step 8: Clone and Build the Project
 Clone the PetClinic repo and build the Docker image:
@@ -95,52 +94,42 @@ docker run -d -p 8080:8080 spring-petclinic
 ---
 
 ### Step 10: Access the Application
-Navigate to **http://localhost:8080**.  
-The Spring PetClinic app will be running.
+Open **http://localhost:8080** — the Spring PetClinic app should be running.
 
 ![PetClinic Running](10 (1).png)
 
 ---
 
-## 4. Pulling Different Docker Images
+## 4️⃣ Pulling Different Docker Images
 
-Here we try pulling different base images from Docker Hub.
+Here we pull several common base images from Docker Hub.
 
-### Step 11: Pull images
-Alpine is a very lightweight Linux distribution, often used as a base image.
-
+### Step 11: Pull Alpine (lightweight base)
 docker pull alpine  
+✅ Pulled successfully.  
 
-✅ Image pulled successfully.  
 ---
 
 ### Step 12: Pull PHP
-Pull the official PHP image:
-
 docker pull php  
+✅ Pulled successfully.  
 
-✅ Image pulled successfully.  
 ---
 
 ### Step 13: Pull Ubuntu
-Pull the official Ubuntu image:
-
 docker pull ubuntu  
+✅ Pulled successfully.  
 
-✅ Image pulled successfully.  
 ---
 
 ### Step 14: Pull Node.js
-At first, the commands `docker pull nodejs` and `docker pull nodjs` failed because such repositories don’t exist.  
-The correct image name is `node`.
+At first, `docker pull nodejs` and `docker pull nodjs` failed because those repos don’t exist.  
+The correct image name is **node**:
 
 docker pull node  
+✅ Image downloads successfully.  
 
-✅ Image is downloading successfully.  
-![Pull](11.png)
+![Node Pull](11.png)
 
-
-
-
-
+---
 
